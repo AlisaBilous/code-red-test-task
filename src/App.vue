@@ -33,6 +33,9 @@ import moment from 'moment'
       },
 
       truncateTitle(title) {
+        if (title === null || title === undefined) {
+          return '';
+        }
         return title.length > 50 ? title.substring(0, 50) + '...' : title
       },
 
@@ -66,5 +69,52 @@ import moment from 'moment'
 </template>
 
 <style scoped>
+  .articles {
+    width: 500px;
+    height: 250px;
+  }
 
+  .articles_wrapper {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    padding: 20px;
+    background-color: rgb(228, 222, 210);
+    text-align: center;
+    color: rgb(225, 20, 160);
+  }
+
+  .articles_border {
+    height: 70%;
+    border: 1px solid;
+    border-radius: 25px;
+  }
+
+  .articles_categories {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px 0;
+  }
+
+  .articles_content {
+    text-align: justify;
+    margin: 0 40px;
+  }
+
+  .articles_list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .articles_title {
+    font-size: 16px;
+  }
+
+  .articles_category {
+    font-size: 18px;
+  }
+
+  .articles h2 {
+    margin: 10px 0;
+  }
 </style>
